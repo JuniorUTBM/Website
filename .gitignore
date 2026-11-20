@@ -1,0 +1,3 @@
+# Local archives (e.g. plugin zips to upload in WordPress) are not part of the site.
+*.zip
+.DS_Store

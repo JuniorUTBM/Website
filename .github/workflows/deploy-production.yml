@@ -1,7 +1,7 @@
 name: Deploy to production (junior.utbm.fr)
 
 # junior.utbm.fr is a WordPress site on UTBM's servers. The "Junior Static Deploy" plugin
-# (wordpress-plugin/) publishes this repository there; this workflow just tells it a new commit exists.
+# (github.com/JuniorUTBM/junior-static-deploy) publishes this repository there; this workflow just tells it a new commit exists.
 # The plugin only ever deploys the current head of main, so the ping needs no secret.
 
 on:

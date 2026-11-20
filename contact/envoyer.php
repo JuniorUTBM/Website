@@ -66,7 +66,7 @@ $headers = [
     'Content-Type' => 'text/plain; charset=UTF-8',
 ];
 
-// WordPress stays installed behind the static site (see wordpress-plugin/): reuse its mailer so any
+// WordPress stays installed behind the static site (see github.com/JuniorUTBM/junior-static-deploy): reuse its mailer so any
 // SMTP setup configured there applies. Fall back to PHP mail() when WordPress is absent.
 $wp_load = dirname(__DIR__) . '/wp-load.php';
 if (is_file($wp_load)) {

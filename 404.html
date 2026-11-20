@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page introuvable | Junior UTBM</title>
   <meta name="description" content="Cette page n’existe pas ou a été déplacée. Retrouvez la Junior UTBM, association étudiante de l’UTBM : prestations d’ingénierie et missions étudiantes.">
@@ -18,7 +19,7 @@
   <!-- EN-TÊTE (identique sur toutes les pages, seuls les chemins et aria-current changent) -->
   <header class="site-header">
     <div class="site-header__inner container">
-      <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="Junior UTBM – accueil" width="2395" height="1454"></a>
+      <a class="brand" href="/"><picture><source srcset="/assets/img/logo.webp" type="image/webp"><img src="/assets/img/logo.png" alt="Junior UTBM – accueil" width="347" height="240"></picture></a>
       <nav class="site-nav" aria-label="Navigation principale">
         <ul class="site-nav__list">
           <li><a href="/">Entreprise</a></li>
@@ -52,7 +53,7 @@
   <footer class="site-footer">
     <div class="container site-footer__grid">
       <div class="site-footer__brand">
-        <img src="/assets/img/lion-outline.svg" alt="" width="61" height="154" loading="lazy" decoding="async">
+        <img src="/assets/img/lion.png" alt="" width="144" height="158" loading="lazy" decoding="async">
         <div>
           <p class="site-footer__name">Junior UTBM</p>
           <p>Association étudiante de l’Université de Technologie de Belfort-Montbéliard.</p>

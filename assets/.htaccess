@@ -9,6 +9,9 @@
 # - CSS et JS : 1 heure, puis revalidation par ETag (réponse 304, quasi gratuite).
 
 <IfModule mod_headers.c>
+  # Empêche le navigateur de deviner le type d'un fichier (ex. traiter un PDF ou une image comme un script).
+  Header always set X-Content-Type-Options "nosniff"
+
   <FilesMatch "\.(woff2?|ttf|otf)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>

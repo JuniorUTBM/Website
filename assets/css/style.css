@@ -575,20 +575,22 @@ ol.process {
 .hero--blue .hero__content { position: relative; z-index: 1; padding-block: var(--s-6); }
 .hero--blue .kicker { color: var(--white); }
 .hero--blue .kicker::before { background: var(--orange); }
+/* Lion plein (silhouette) : calé contre le bord droit, la crinière légèrement rognée par l'écran.
+   Opacité réduite pour ne pas concurrencer le titre blanc. */
 .hero__lion {
   position: absolute;
-  top: -12%;
-  right: -9rem;
+  bottom: var(--s-8);
+  right: -3rem;
   width: auto;
-  height: 125%;
+  height: 45%;
   max-width: none;
-  opacity: 0.14;
+  opacity: 0.1;
   pointer-events: none;
 }
 @media (min-width: 56em) {
   .hero--blue { min-height: 36rem; }
   .hero--blue .hero__content { grid-column: 2; padding-block: var(--s-9) var(--s-8); }
-  .hero__lion { right: -2rem; height: 135%; opacity: 1; }
+  .hero__lion { bottom: auto; top: 50%; right: -6rem; height: 80%; transform: translateY(-50%); opacity: 0.2; }
 }
 
 .rotator-block { display: grid; gap: var(--s-5); }
@@ -1002,7 +1004,7 @@ ul.benefits {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
 }
 .site-footer__brand { display: flex; gap: var(--s-4); align-items: flex-start; }
-.site-footer__brand img { width: 2.25rem; height: auto; }
+.site-footer__brand img { width: 4rem; height: auto; }
 .site-footer__name { margin: 0 0 var(--s-1); font-family: var(--font-head); font-weight: 800; font-size: 1.125rem; }
 .site-footer__brand p:not(.site-footer__name) { color: #5C5D60; }
 .site-footer h2 {

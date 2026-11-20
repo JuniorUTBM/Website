@@ -1,0 +1,45 @@
+name: Deploy to production (junior.utbm.fr)
+
+# junior.utbm.fr is a WordPress site on UTBM's servers. The "Junior Static Deploy" plugin
+# (wordpress-plugin/) publishes this repository there; this workflow just tells it a new commit exists.
+# The plugin only ever deploys the current head of main, so the ping needs no secret.
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://junior.utbm.fr/
+    steps:
+      - name: Ask the server to pull this commit
+        run: |
+          response=$(curl -sS --max-time 300 -X POST \
+            -H 'Content-Type: application/json' \
+            -d "{\"sha\":\"$GITHUB_SHA\"}" \
+            -w '\n%{http_code}' \
+            'https://junior.utbm.fr/index.php?rest_route=/junior-deploy/v1/sync')
+          code=$(printf '%s' "$response" | tail -n1)
+          body=$(printf '%s' "$response" | sed '$d')
+          echo "HTTP $code"
+          echo "$body" | jq . || echo "$body"
+          if [ "$code" = "404" ]; then
+            echo "::error::Plugin not installed or not activated on junior.utbm.fr (Extensions > Junior Static Deploy)."
+          fi
+          [ "$(echo "$body" | jq -r '.ok' 2>/dev/null)" = "true" ]
+
+      - name: Smoke test
+        run: |
+          for path in / /etudiants/ /contact/ /partenaires/; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://junior.utbm.fr$path")
+            echo "$code $path"
+            [ "$code" = "200" ] || exit 1
+          done

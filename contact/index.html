@@ -72,13 +72,14 @@
       <div class="container">
         <p class="kicker">Contact</p>
         <h1 id="titre-principal">Prenons contact&nbsp;!</h1>
-        <p>Quelques informations pour que nous puissions en savoir plus sur vous et vos projets.</p>
+        <p>Un projet, une question, une candidature&nbsp;? Quelques informations suffisent pour que nous puissions en savoir plus sur vous et vos projets.</p>
       </div>
     </section>
 
-    <section class="section" aria-label="Formulaire et coordonnées">
+    <section class="section section--light" aria-label="Formulaire et coordonnées">
       <div class="container contact-grid">
-        <div id="formulaire">
+        <div class="contact-card" id="formulaire">
+          <h2 class="contact-card__title">Écrivez-nous</h2>
           <div class="form-status" role="status" data-form-status></div>
           <form class="form" method="post" action="envoyer.php" data-contact-form>
             <p class="form__note">Les champs marqués d’un astérisque (<span class="req">*</span>) sont obligatoires.</p>
@@ -100,14 +101,16 @@
               <p class="field__error" id="erreur-email">Saisissez une adresse e-mail valide, par exemple prenom.nom@entreprise.fr.</p>
             </div>
 
-            <div class="field">
-              <label for="telephone">Téléphone <span class="hint">(facultatif)</span></label>
-              <input class="input" id="telephone" name="telephone" type="tel" autocomplete="tel">
-            </div>
+            <div class="form__row">
+              <div class="field">
+                <label for="telephone">Téléphone <span class="hint">(facultatif)</span></label>
+                <input class="input" id="telephone" name="telephone" type="tel" autocomplete="tel">
+              </div>
 
-            <div class="field">
-              <label for="objet">Objet <span class="hint">(facultatif)</span></label>
-              <input class="input" id="objet" name="objet" type="text" maxlength="200">
+              <div class="field">
+                <label for="objet">Objet <span class="hint">(facultatif)</span></label>
+                <input class="input" id="objet" name="objet" type="text" maxlength="200">
+              </div>
             </div>
 
             <div class="field">
@@ -126,25 +129,49 @@
               <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
 
-            <div>
+            <div class="form__submit">
               <button class="btn btn--primary" type="submit">Envoyer <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 10h12M10.5 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button>
             </div>
           </form>
         </div>
 
-        <p class="or" aria-hidden="true">ou</p>
+        <aside class="contact-aside" aria-label="Autres moyens de contact">
+          <div class="contact-info">
+            <h2>Autres moyens de nous joindre</h2>
+            <ul class="contact-info__list">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                <div>
+                  <h3>Par e-mail</h3>
+                  <p><a href="mailto:contact@juniorutbm.fr">contact@juniorutbm.fr</a></p>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                <div>
+                  <h3>Par courrier</h3>
+                  <address>Junior UTBM<br>UTBM, Rue de Leupe<br>90400 Sevenans, France</address>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2.5 20c.6-3.6 3.2-6 6.5-6s5.9 2.4 6.5 6M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.4c1.9.8 3.2 2.9 3.5 5.6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                <div>
+                  <h3>Sur les réseaux</h3>
+                  <p><a href="https://www.linkedin.com/company/junior-utbm/" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/junior_utbm/" rel="noopener">Instagram</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
 
-        <div class="alt-contact">
-          <p class="visually-hidden">Vous pouvez aussi nous écrire&nbsp;:</p>
-          <div class="alt-contact__block">
-            <h2>Par courrier</h2>
-            <address>Junior UTBM<br>UTBM, Rue de Leupe<br>90400 Sevenans, France</address>
+          <div class="contact-next">
+            <h2>Et ensuite&nbsp;?</h2>
+            <ol class="contact-next__steps">
+              <li>Un membre de l’équipe lit votre message et vous répond par e-mail.</li>
+              <li>Entreprise&nbsp;: nous fixons un rendez-vous pour comprendre votre besoin.</li>
+              <li>Étudiant·e&nbsp;: nous vous recontactons dès qu’une mission correspond à votre profil.</li>
+            </ol>
           </div>
-          <div class="alt-contact__block">
-            <h2>Par mail</h2>
-            <p><a href="mailto:contact@juniorutbm.fr">contact@juniorutbm.fr</a></p>
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
   </main>

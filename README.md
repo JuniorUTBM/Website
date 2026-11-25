@@ -14,6 +14,7 @@ Site statique écrit à la main : HTML, une feuille de style, un petit script. P
 | `index.html` | Accueil (entreprises) |
 | `etudiants/`, `partenaires/`, `contact/` | Pages du site (`index.html` dans chaque dossier) |
 | `404.html` | Page d'erreur |
+| `favicon.ico`, `assets/img/favicon*.{svg,png}`, `assets/img/apple-touch-icon.png` | Icône du site (onglet, favoris, résultats de recherche) |
 | `assets/css/style.css` | Tous les styles (couleurs de la marque : orange `#FE9326`, bleu `#2D75BB`) |
 | `assets/js/main.js` | Carrousel de l'équipe, texte animé, messages du formulaire |
 | `assets/img/`, `assets/fonts/`, `assets/docs/` | Images, polices, plaquette et mentions légales (PDF) |
